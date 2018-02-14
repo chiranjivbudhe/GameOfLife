@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/Scenes/Grid10.unity
+  isLoaded: 1
+  isActive: 1
