@@ -5,7 +5,7 @@ using UnityEngine;
 public class NewCells : MonoBehaviour {
 
     GridManager gridManagerScript;
-
+ 
 	// Use this for initialization
 	void Start () {
         gridManagerScript = GameObject.FindGameObjectWithTag("Managers").GetComponent<GridManager>();
@@ -18,7 +18,6 @@ public class NewCells : MonoBehaviour {
 
     public void UpdateCellsOnBoard(List<List<int>> updateCellList)
     {
-       
         for (int colIndex = 0; colIndex < gridManagerScript.cols; colIndex++)
         {
             for (int rowIndex = 0; rowIndex < gridManagerScript.rows; rowIndex++)

@@ -18,18 +18,10 @@ public class Neighbour : MonoBehaviour {
  
     public int CellStatus
     {
-        get
-        {
-            return cellStatus;
-        }
-
-        set
-        {
-            cellStatus = value;
-        }
+        get {  return cellStatus;  }
+        set {  cellStatus = value;  }
     }
-
-
+    
     // Use this for initialization
     void Start () {
         gridManagerScript = GameObject.FindGameObjectWithTag("Managers").GetComponent<GridManager>();
@@ -39,7 +31,7 @@ public class Neighbour : MonoBehaviour {
 
     public void IterateEachCell()
     {
-
+     
         List<List<int>> updatedCellList = new List<List<int>>();
         for (int colIndex = 0; colIndex < gridManagerScript.cols; colIndex++)
         {
@@ -69,8 +61,8 @@ public class Neighbour : MonoBehaviour {
 
     int CheckNeighbours(int colIndex, int rowIndex)
     {
-      
         int counter = 0;
+       
         if (colIndex != (gridManagerScript.cols -1) && gridManagerScript.allCells[colIndex + 1][rowIndex].isAlive)
             counter++;
         if (colIndex != (gridManagerScript.cols - 1) && rowIndex != (gridManagerScript.rows - 1) && gridManagerScript.allCells[colIndex + 1][rowIndex+1].isAlive)
@@ -87,7 +79,6 @@ public class Neighbour : MonoBehaviour {
             counter++;
         if (rowIndex != 0 && gridManagerScript.allCells[colIndex][rowIndex-1].isAlive)
             counter++;
-
         return counter;
     }
 }
